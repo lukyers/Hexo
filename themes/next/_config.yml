@@ -30,7 +30,7 @@ canonical: true
 menu:
   home: /
   categories: /categories
-  blog: /categories/blog
+  #blog: /categories/Blog
   archives: /archives
   tags: /tags
   about: /about
@@ -90,7 +90,7 @@ font:
   # Fallback to `global` font settings.
   headings:
     external: true
-    family:
+    family: Cambria, Georgia, 'Microsoft Jhenghei', 'Hiragino Sans GB', 'Microsoft YaHei', 'Times New Roman', serif
 
   # Font settings for posts
   # Fallback to `global` font settings.
@@ -103,8 +103,8 @@ font:
   # The `size` option use `px` as unit
   logo:
     external: true
-    family: Lobster Two
-    size: 24
+    family: 'Microsoft YaHei'
+    size: 30
 
   # Font settings for <code> and code blocks.
   codes:
@@ -265,7 +265,7 @@ duoshuo_shortname: zbin
 
 # Share
 duoshuo_share: true
-duoshuo_hotartical: true
+duoshuo_hotartical: false
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/

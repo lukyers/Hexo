@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Z-Bin
+title: Z-Bin's Blog
 subtitle:
 description:
 author: Zhang Bin
@@ -64,6 +64,10 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+# hexo sitemap网站地图
+sitemap:
+path: sitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

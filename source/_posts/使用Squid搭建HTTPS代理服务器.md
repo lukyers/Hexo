@@ -1,8 +1,12 @@
 ---
 title: 使用Squid搭建HTTPS代理服务器
 date: 2016-06-23 16:03:36
-categories: blog
-tags: [HTTPS代理, 翻墙, VPN]
+categories: 
+	- Blog
+tags: 
+	- HTTPS代理
+	- 翻墙
+	- VPN
 photos:
 	-http://img3.imgtn.bdimg.com/it/u=723031845,3409555236&fm=21&gp=0.jpg
 ---
