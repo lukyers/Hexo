@@ -15,6 +15,7 @@ tags:
 
 　　由于工作需要以及某些原因，经常需要上一些"其他"网站，所以上网利器是一个必不可少的工具，但苦于公司的IT不允许安装shadowsocks，第三方的VPN服务有时候会抽风，所以就在自己的AWS上搭建了代理，之前有用过TinyProxy的HTTP代理，由于没有加密传输所以还是会被墙，所以我们需要使用加密的HTTPS来穿透GFW，在网上找到了Squid来搭建的HTTPS代理，记录一下安装的过程。
 本文转载自[使用Squid搭建HTTPS代理服务器](http://www.predatorray.me/%E5%9C%A8VPS%E4%B8%8A%E6%90%AD%E5%BB%BASquid%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/)
+<!-- more -->
 ### **安装必要的软件**
 ------
 安装`apache2-utils`用于HTTP认证文件的生成，
@@ -39,7 +40,7 @@ tags:
 找到`TAG: http_port`注释，把其下方的
 
 > Squid normally listens to port 3128
-http_port 3128
+> http_port 3128
 
 中`http_port`修改为`127.0.0.1:3128`，使得Squid只能被本地（127.0.0.1）访问。此处可以修改为监听其他端口号。
 
@@ -54,10 +55,10 @@ http_port 3128
 再次打开Squid配置文件`/etc/squid3/squid.conf`，找到`TAG: auth_param`注释，在其下方添加，
 
 > auth_param basic program /usr/lib/squid3/basic_ncsa_auth /etc/squid3/squid.passwd
-auth_param basic children 5
-auth_param basic realm Squid proxy-caching web server
-auth_param basic credentialsttl 2 hours
-auth_param basic casesensitive off
+> auth_param basic children 5
+> auth_param basic realm Squid proxy-caching web server
+> auth_param basic credentialsttl 2 hours
+> auth_param basic casesensitive off
 
 找到`TAG: acl`，在其下方添加，
 
@@ -66,7 +67,7 @@ auth_param basic casesensitive off
 找到`TAG: http_access`，在其下方添加，使得只允许经过认证的用户访问，
 
 > http_access deny !ncsa_users
-http_access allow ncsa_users
+> http_access allow ncsa_users
 
 #### **3. 重启Squid**
 
@@ -98,10 +99,10 @@ http_access allow ncsa_users
 新建一个配置文件`/etc/stunnel/stunnel.conf`，输入如下内容
 
 > client = no
-[squid]
-accept = 4128
-connect = 127.0.0.1:3128
-cert = /etc/stunnel/stunnel.pem
+> [squid]
+> accept = 4128
+> connect = 127.0.0.1:3128
+> cert = /etc/stunnel/stunnel.pem
 
 配置中指定了stunnel所暴露的HTTPS代理端口为4128，可以修改为其他的值。
 
