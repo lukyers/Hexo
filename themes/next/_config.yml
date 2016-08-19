@@ -123,7 +123,7 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  GitHub: https://github.com
+  GitHub: https://github.com/lukyers
   weibo: http://weibo.com/lukyers
   zhihu: https://www.zhihu.com/people/zbin-richard
   #LinkLabel: Link
